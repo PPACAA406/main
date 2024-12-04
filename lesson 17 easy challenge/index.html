@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic HTML Page with Navigation and Tooltips</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Navigation menu styling */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      position: relative;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    /* Hide dropdown items initially */
+    ul li ul {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: #444;
+      min-width: 150px;
+      text-align: left;
+      border-radius: 5px;
+    }
+
+    ul li:hover > ul {
+      display: block; /* Show dropdown when hovering */
+    }
+
+    /* Dropdown item styling */
+    ul li ul li {
+      padding: 10px;
+      color: white;
+      background-color: #444;
+    }
+
+    ul li ul li:hover {
+      background-color: #666;
+    }
+
+    /* Tooltip styling */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Website</h1>
+  
+  <!-- Navigation Menu -->
+  <ul>
+    <li class="tooltip">
+      Home
+      <span class="tooltiptext">Go to the homepage</span>
+    </li>
+    <li class="tooltip">
+      About
+      <span class="tooltiptext">Learn more about us</span>
+    </li>
+    <li class="tooltip">
+      Services
+      <span class="tooltiptext">Explore our services</span>
+      <ul>
+        <li>Web Development</li>
+        <li>SEO</li>
+        <li>Design</li>
+      </ul>
+    </li>
+    <li class="tooltip">
+      Contact
+      <span class="tooltiptext">Get in touch with us</span>
+    </li>
+  </ul>
+
+</body>
+</html>
